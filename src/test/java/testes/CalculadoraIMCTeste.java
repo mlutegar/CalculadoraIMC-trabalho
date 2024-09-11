@@ -26,6 +26,25 @@ public class CalculadoraIMCTeste {
     }
 
     // ADULTOS TESTES (14 no total)
+    // Baixo peso muito grave: IMC < 16 | (40, 1.80, 30, "m") = 12.3
+    @Test
+    public void testeCalcularImcAdultoPesoMuitoGrave() {
+        Assert.assertEquals("Baixo peso muito grave", calcIMC.calcularImc(40, 1.80, 30, "m"));
+    }
+
+    // Baixo peso grave 1: 16 <= IMC < 17 | (51.9, 1.80, 30, "m") = 16
+    @Test
+    public void testeCalcularImcAdultoPesoGrave1() {
+        Assert.assertEquals("Baixo peso grave", calcIMC.calcularImc(51.9, 1.80, 30, "m"));
+    }
+
+    // Baixo peso grave 2: 16 <= IMC < 17 | (55, 1.80, 30, "m") = 16,9
+    @Test
+    public void testeCalcularImcAdultoPesoGrave2() {
+        Assert.assertEquals("Baixo peso grave", calcIMC.calcularImc(55, 1.80, 30, "m"));
+    }
+
+
     @Test
     public void testeCalcularImcAdultoPesoAbaixoDoNormal() {
         Assert.assertEquals("Baixo peso", calcIMC.calcularImc(55, 1.80, 30, "m"));
