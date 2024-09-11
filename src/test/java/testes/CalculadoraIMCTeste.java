@@ -224,7 +224,34 @@ public class CalculadoraIMCTeste {
     public void testeCalcularImcVelhoFemininoObesidadeGrauI2() {
         Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(94.8, 1.60, 70, "f"));
     }
+    // Obesidade grau II1: 37 < IMC <= 41.9 | (95, 1.60, 70, "f") = 37.1
+    @Test
+    public void testeCalcularImcVelhoFemininoObesidadeGrauII1() {
+        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(95, 1.60, 70, "f"));
+    }
 
+    // Obesidade grau II2: 37 < IMC <= 41.9 | (107.3, 1.60, 70, "f") = 41.9
+    @Test
+    public void testeCalcularImcVelhoFemininoObesidadeGrauII2() {
+        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(107.3, 1.60, 70, "f"));
+    }
+
+    // Obesidade grau III (obesidade mórbida): IMC >= 42 | (107.6, 1.60, 70, "f") = 42
+    @Test
+    public void testeCalcularImcVelhoFemininoObesidadeGrauIII() {
+        Assert.assertEquals("Obesidade grau III (obesidade mórbida)", calcIMC.calcularImc(108, 1.60, 70, "f"));
+    }
 
     // CRIANÇAS TESTES (60 no total {5 idades [2,4,6,8,10], 6 classificações e 2 sexos})
+
+    // CRIANÇA MASCULINO
+
+    // 2 ANOS
+
+    // Baixo peso: IMC < 16 | (12, 0.90, 2, "m") = 14.8
+    @Test
+    public void testeCalcularImcCriancaMasculino2AnosBaixoPeso() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(12, 0.90, 2, "m")); // IMC = 14.8
+    }
+
 }
