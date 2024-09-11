@@ -44,7 +44,7 @@ public class CalculadoraIMC {
     public String calcularImcVelho(String sexo, double imc) {
         if (Objects.equals(sexo, "m")) {
             // Classificação para homens acima de 65 anos
-            if (imc < 21.9) {
+            if (imc < 22) {
                 return "Baixo peso";
             } else if (imc >= 22 && imc <= 27) {
                 return "Peso normal";
