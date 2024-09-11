@@ -1,0 +1,13 @@
+[] deixar todos os textos em minuscúlo
+[] separar cada faixa de idade em masculino (m) e feminino (f)
+[] deixar o string de masculino e feminino em minusculo (m) e (f)
+[] verificar a quantidade total de teste para cada situacao
+e um teste para o limite de cada faixa, ou seja "Baixo peso grave: entre 16 e 16,99" tem que ter um teste para 16 e um para 16,99
+não é necessário de duas casas decimais, pode ser uma só
+14 testes para adultos
+20 testes para velhos
+60 testes para crianças (5 idades analisadas, 6 classificações e 2 sexos)
+adulto é de 20 a 55
+criança é 2 a 19 (idades analisadas 2,4,6,8,10)
+
+https://www.mdsaude.com/obesidade/calcule-o-seu-peso-ideal-e-imc/
