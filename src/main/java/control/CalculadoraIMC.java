@@ -15,9 +15,12 @@ public class CalculadoraIMC {
         }
     }
 
+    // Imc: método que calcula o IMC de uma pessoa e retorna o valor arredondado em 5 casas decimais
     private static double Imc(double peso, double altura) {
-        return peso / (altura * altura);
+        double imc = peso / (altura * altura);
+        return Math.round(imc * 100000.0) / 100000.0;
     }
+
 
     // ADULTOS MÉTODOS (14 no total)
     public String calcularImcAdulto(double imc) {
