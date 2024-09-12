@@ -191,13 +191,13 @@ public class CalculadoraIMC {
     }
 
     public String calcularImcCriancaFeminino2Anos(double imc) {
-        if (imc < 14.3) {
+        if (imc < 14.4) {
             return "Baixo peso";
-        } else if (imc >= 14.3 && imc < 17.7) {
+        } else if (imc >= 14.4 && imc < 18) {
             return "Peso normal";
-        } else if (imc >= 17.7 && imc <= 18.9) {
+        } else if (imc >= 18 && imc <= 19.1) {
             return "Sobrepeso";
-        } else if (imc > 18.9) {
+        } else if (imc > 19.1) {
             return "Obesidade";
         } else {
             return "IMC informado inválido.";
@@ -205,13 +205,13 @@ public class CalculadoraIMC {
     }
 
     public String calcularImcCriancaFeminino4Anos(double imc) {
-        if (imc < 13.9) {
+        if (imc < 13.8) {
             return "Baixo peso";
-        } else if (imc >= 13.9 && imc < 17.3) {
+        } else if (imc >= 13.8 && imc < 16.8) {
             return "Peso normal";
-        } else if (imc >= 17.3 && imc <= 18.6) {
+        } else if (imc >= 16.8 && imc <= 18) {
             return "Sobrepeso";
-        } else if (imc > 18.6) {
+        } else if (imc > 18) {
             return "Obesidade";
         } else {
             return "IMC informado inválido.";
@@ -219,13 +219,13 @@ public class CalculadoraIMC {
     }
 
     public String calcularImcCriancaFeminino6Anos(double imc) {
-        if (imc < 13.6) {
+        if (imc < 13.5) {
             return "Baixo peso";
-        } else if (imc >= 13.6 && imc < 17.6) {
+        } else if (imc >= 13.5 && imc < 17.1) {
             return "Peso normal";
-        } else if (imc >= 17.6 && imc <= 19.6) {
+        } else if (imc >= 17.1 && imc <= 18.8) {
             return "Sobrepeso";
-        } else if (imc > 19.6) {
+        } else if (imc > 18.8) {
             return "Obesidade";
         } else {
             return "IMC informado inválido.";
@@ -233,13 +233,13 @@ public class CalculadoraIMC {
     }
 
     public String calcularImcCriancaFeminino8Anos(double imc) {
-        if (imc < 13.2) {
+        if (imc < 13.6) {
             return "Baixo peso";
-        } else if (imc >= 13.2 && imc < 18.1) {
+        } else if (imc >= 13.6 && imc < 18.2) {
             return "Peso normal";
-        } else if (imc >= 18.1 && imc <= 20.3) {
+        } else if (imc >= 18.2 && imc <= 20.6) {
             return "Sobrepeso";
-        } else if (imc > 20.3) {
+        } else if (imc > 20.6) {
             return "Obesidade";
         } else {
             return "IMC informado inválido.";
@@ -247,13 +247,13 @@ public class CalculadoraIMC {
     }
 
     public String calcularImcCriancaFeminino10Anos(double imc) {
-        if (imc < 13) {
+        if (imc < 14) {
             return "Baixo peso";
-        } else if (imc >= 13 && imc < 18.5) {
+        } else if (imc >= 14 && imc < 20) {
             return "Peso normal";
-        } else if (imc >= 18.5 && imc <= 21.3) {
+        } else if (imc >= 20 && imc <= 23) {
             return "Sobrepeso";
-        } else if (imc > 21.3) {
+        } else if (imc > 23) {
             return "Obesidade";
         } else {
             return "IMC informado inválido.";
