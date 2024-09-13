@@ -27,219 +27,213 @@ public class CalculadoraIMCTeste {
 
     // ADULTOS TESTES (14 no total)
 
-    // Baixo peso muito grave: IMC < 16 | (40, 1.80, 30, "m") = 12.3
+    // Baixo peso muito grave: IMC < 16 | (51.516, 1.80, 30, "masculino") = 12.3
     @Test
-    public void testeCalcularImcAdultoPesoMuitoGrave() {
-        Assert.assertEquals("Baixo peso muito grave", calcIMC.calcularImc(40, 1.80, 30, "m"));
+    public void testeAdultoPesoMuitoGrave() {
+        Assert.assertEquals("Baixo peso muito grave", calcIMC.calcularImc(51.516, 1.80, 30, "masculino"));
     }
 
-    // Baixo peso grave 1: 16 <= IMC < 17 | (51.9, 1.80, 30, "m") = 16
+    // Baixo peso grave 1: 16 <= IMC < 17 | (51.84, 1.80, 30, "masculino") = 16
     @Test
-    public void testeCalcularImcAdultoPesoGrave1() {
-        Assert.assertEquals("Baixo peso grave", calcIMC.calcularImc(51.9, 1.80, 30, "m"));
+    public void testeAdultoPesoGraveLimiteInferior() {
+        Assert.assertEquals("Baixo peso grave", calcIMC.calcularImc(51.84, 1.80, 30, "masculino"));
     }
 
-    // Baixo peso grave 2: 16 <= IMC < 17 | (54,8, 1.80, 30, "m") = 16,9
+    // Baixo peso grave 2: 16 <= IMC < 17 | (54,756, 1.80, 30, "masculino") = 16,9
     @Test
-    public void testeCalcularImcAdultoPesoGrave2() {
-        Assert.assertEquals("Baixo peso grave", calcIMC.calcularImc(55, 1.80, 30, "m"));
+    public void testeAdultoPesoGraveLimiteSuperior() {
+        Assert.assertEquals("Baixo peso grave", calcIMC.calcularImc(54.756, 1.80, 30, "masculino"));
     }
 
-    // Baixo peso1: 17 <= IMC < 18.5 | (55,1, 1.80, 30, "m") = 17
+    // Baixo peso1: 17 <= IMC < 18.5 | (55.08, 1.80, 30, "masculino") = 17
     @Test
-    public void testeCalcularImcAdultoBaixoPesoDoNormal1() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(55.1, 1.80, 30, "m"));
+    public void testeAdultoBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(55.08, 1.80, 30, "masculino"));
     }
 
-    // Baixo peso2: 17 <= IMC < 18.5 | (55.9, 1.80, 30, "m") = 18.5
+    // Baixo peso2: 17 <= IMC < 18.5 | (59.616, 1.80, 30, "masculino") = 18.5
     @Test
-    public void testeCalcularImcAdultoBaixoPesoDoNormal2() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(55.9, 1.80, 30, "m"));
+    public void testeAdultoBaixoPesoSuperior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(59.616, 1.80, 30, "masculino"));
     }
 
-    // Peso normal1: 18.5 <= IMC < 25 | (60, 1.80, 30, "m") = 18.5
+    // Peso normal1: 18.5 <= IMC < 25 | (59.94, 1.80, 30, "masculino") = 18.5
     @Test
-    public void testeCalcularImcAdultoPesoNormal1() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(60, 1.80, 30, "m"));
+    public void testeAdultoPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(59.94, 1.80, 30, "masculino"));
     }
 
-    // Peso normal2: 18.5 <= IMC < 25 | (80.9, 1.80, 30, "m") = 24.9
+    // Peso normal2: 18.5 <= IMC < 25 | (80.676, 1.80, 30, "masculino") = 24.9
     @Test
-    public void testeCalcularImcAdultoPesoNormal2() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(80.9, 1.80, 30, "m"));
+    public void testeAdultoPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(80.676, 1.80, 30, "masculino"));
     }
 
-    // Sobrepeso1: 25 <= IMC < 30 | (81, 1.80, 30, "m") = 25
+    // Sobrepeso1: 25 <= IMC < 30 | (81, 1.80, 30, "masculino") = 25
     @Test
-    public void testeCalcularImcAdultoSobrepeso1() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(81, 1.80, 30, "m"));
+    public void testeAdultoSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(81, 1.80, 30, "masculino"));
     }
 
-    // Sobrepeso2: 25 <= IMC < 30 | (97.1, 1.80, 30, "m") = 29.9
+    // Sobrepeso2: 25 <= IMC < 30 | (96.876, 1.80, 30, "masculino") = 29.9
     @Test
-    public void testeCalcularImcAdultoSobrepeso2() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(97.1, 1.80, 30, "m"));
+    public void testeAdultoSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(96.876, 1.80, 30, "masculino"));
     }
 
-    // Obesidade grau I1: 30 <= IMC < 35 | (97.2, 1.80, 30, "m") = 30
+    // Obesidade grau I1: 30 <= IMC < 35 | (97.2, 1.80, 30, "masculino") = 30
     @Test
-    public void testeCalcularImcAdultoObesidadeGrauI1() {
-        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(97.2, 1.80, 30, "m"));
+    public void testeAdultoObesidadeGrauILimiteInferior() {
+        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(97.2, 1.80, 30, "masculino"));
     }
 
-    // Obesidade grau I2: 30 <= IMC < 35 | (113.3, 1.80, 30, "m") = 34.9
+    // Obesidade grau I2: 30 <= IMC < 35 | (113.076, 1.80, 30, "masculino") = 34.9
     @Test
-    public void testeCalcularImcAdultoObesidadeGrauI2() {
-        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(113.3, 1.80, 30, "m"));
+    public void testeAdultoObesidadeGrauILimiteSuperior() {
+        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(113.076, 1.80, 30, "masculino"));
     }
 
-    // Obesidade grau II1: 35 <= IMC < 40 | (113.4, 1.80, 30, "m") = 35
+    // Obesidade grau II1: 35 <= IMC < 40 | (113.4, 1.80, 30, "masculino") = 35
     @Test
-    public void testeCalcularImcAdultoObesidadeGrauII1() {
-        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(113.4, 1.80, 30, "m"));
+    public void testeAdultoObesidadeGrauIILimiteInferior() {
+        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(113.4, 1.80, 30, "masculino"));
     }
 
-    // Obesidade grau II2: 35 <= IMC < 40 | (129.5, 1.80, 30, "m") = 39.9
+    // Obesidade grau II2: 35 <= IMC < 40 | (129.276, 1.80, 30, "masculino") = 39.9
     @Test
-    public void testeCalcularImcAdultoObesidadeGrauII2() {
-        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(129.5, 1.80, 30, "m"));
+    public void testeAdultoObesidadeGrauIILimiteSuperior() {
+        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(129.5, 1.80, 30, "masculino"));
     }
 
-    // Obesidade grau III (obesidade mórbida): IMC >= 40 | (129.6, 1.80, 30, "m") = 40
+    // Obesidade grau III (obesidade mórbida): IMC >= 40 | (129.6, 1.80, 30, "masculino") = 40
     @Test
-    public void testeCalcularImcAdultoObesidadeGrauIII() {
-        Assert.assertEquals("Obesidade grau III (obesidade mórbida)", calcIMC.calcularImc(129.6, 1.80, 30, "m"));
+    public void testeAdultoObesidadeGrauIII() {
+        Assert.assertEquals("Obesidade grau III (obesidade mórbida)", calcIMC.calcularImc(129.6, 1.80, 30, "masculino"));
     }
 
     // VELHOS TESTES (20 no total)
 
     // VELHO MASCULINO
 
-    // Baixo peso: IMC < 21.9 | (70.6, 1.80, 70, "m") = 21.8
+    // Baixo peso: IMC < 21.9 | (70.632, 1.80, 70, "masculino") = 21.8
     @Test
-    public void testeCalcularImcVelhoMasculinoBaixoPeso() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(70.6, 1.80, 70, "m"));
+    public void testeVelhoMasculinoBaixoPeso() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(70.632, 1.80, 70, "masculino"));
     }
 
-    // Peso normal1: 22 <= IMC <= 27 | (71.3, 1.80, 70, "m") = 22
+    // Peso normal1: 22 <= IMC <= 27 | (71.28, 1.80, 70, "masculino") = 22
     @Test
-    public void testeCalcularImcVelhoMasculinoPesoNormal1() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(71.3, 1.80, 70, "m"));
+    public void testeVelhoMasculinoPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(71.28, 1.80, 70, "masculino"));
     }
 
-    // Peso normal2: 22 <= IMC <= 27 | (87.48, 1.80, 70, "m") = 27
+    // Peso normal2: 22 <= IMC <= 27 | (87.48, 1.80, 70, "masculino") = 27
     @Test
-    public void testeCalcularImcVelhoMasculinoPesoNormal2() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(87.48, 1.80, 70, "m"));
+    public void testeVelhoMasculinoPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(87.48, 1.80, 70, "masculino"));
     }
 
-    // Sobrepeso1: 27 < IMC <= 30 | (87.6, 1.80, 70, "m") = 27.1
+    // Sobrepeso1: 27 < IMC <= 30 | (87.804, 1.80, 70, "masculino") = 27.1
     @Test
-    public void testeCalcularImcVelhoMasculinoSobrepeso1() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(87.6, 1.80, 70, "m"));
+    public void testeVelhoMasculinoSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(87.804, 1.80, 70, "masculino"));
     }
 
-    // Sobrepeso2: 27 < IMC <= 30 | (97,2, 1.80, 70, "m") = 30
+    // Sobrepeso2: 27 < IMC <= 30 | (97,2, 1.80, 70, "masculino") = 30
     @Test
-    public void testeCalcularImcVelhoMasculinoSobrepeso2() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(97.2, 1.80, 70, "m"));
+    public void testeVelhoMasculinoSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(97.2, 1.80, 70, "masculino"));
     }
 
-    // Obesidade grau I1: 30 < IMC <= 35 | (97.3, 1.80, 70, "m") = 30.01
+    // Obesidade grau I1: 30 < IMC <= 35 | (97.524, 1.80, 70, "masculino") = 30.1
     @Test
-    public void testeCalcularImcVelhoMasculinoObesidadeGrauI1() {
-        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(97.3, 1.80, 70, "m"));
+    public void testeVelhoMasculinoObesidadeGrauILimiteInferior() {
+        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(97.524, 1.80, 70, "masculino"));
     }
 
-    // Obesidade grau I2: 30 < IMC <= 35 | (113.4, 1.80, 70, "m") = 34.9
+    // Obesidade grau I2: 30 < IMC <= 35 | (113.076, 1.80, 70, "masculino") = 34.9
     @Test
-    public void testeCalcularImcVelhoMasculinoObesidadeGrauI2() {
-        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(113.4, 1.80, 70, "m"));
+    public void testeVelhoMasculinoObesidadeGrauILimiteSuperior() {
+        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(113.076, 1.80, 70, "masculino"));
     }
 
-    // Obesidade grau II1: 35 < IMC <= 39.9 | (113.8, 1.80, 70, "m") = 35.03
+    // Obesidade grau II1: 35 < IMC <= 39.9 | (113.724, 1.80, 70, "masculino") = 35.1
     @Test
-    public void testeCalcularImcVelhoMasculinoObesidadeGrauII1() {
-        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(113.8, 1.80, 70, "m"));
+    public void testeVelhoMasculinoObesidadeGrauIILimiteInferior() {
+        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(113.8, 1.80, 70, "masculino"));
     }
 
-    // Obesidade grau II2: 35 < IMC <= 39.9 | (129.276, 1.80, 70, "m") = 39.9
+    // Obesidade grau II2: 35 < IMC <= 39.9 | (129.276, 1.80, 70, "masculino") = 39.9
     @Test
-    public void testeCalcularImcVelhoMasculinoObesidadeGrauII2() {
-        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(129.276, 1.80, 70, "m"));
+    public void testeVelhoMasculinoObesidadeGrauIILimiteSuperior() {
+        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(129.276, 1.80, 70, "masculino"));
     }
 
-    // Obesidade grau III (obesidade mórbida): IMC >= 40 | (130, 1.80, 70, "m") = 40
+    // Obesidade grau III (obesidade mórbida): IMC >= 40 | (129.6, 1.80, 70, "masculino") = 40
     @Test
-    public void testeCalcularImcVelhoMasculinoObesidadeGrauIII() {
-        Assert.assertEquals("Obesidade grau III (obesidade mórbida)", calcIMC.calcularImc(130, 1.80, 70, "m"));
+    public void testeVelhoMasculinoObesidadeGrauIII() {
+        Assert.assertEquals("Obesidade grau III (obesidade mórbida)", calcIMC.calcularImc(129.6, 1.80, 70, "masculino"));
     }
 
     // VELHO FEMININO
 
-    // Baixo peso: IMC < 21.9 | (50, 1.60, 70, "f") = 19.5
+    // Baixo peso: IMC < 21.9 | (55.808, 1.60, 70, "feminino") = 21.8
     @Test
-    public void testeCalcularImcVelhoFemininoBaixoPeso1() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(50, 1.60, 70, "f"));
+    public void testeVelhoFemininoBaixoPeso() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(55.808, 1.60, 70, "feminino"));
     }
 
-    // Baixo peso: IMC < 21.9 | (55.9, 1.60, 70, "f") = 21.8
+    // Peso normal1: 22 <= IMC <= 27 | (56.32, 1.60, 70, "feminino") = 22
     @Test
-    public void testeCalcularImcVelhoFemininoBaixoPeso2() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(55.9, 1.60, 70, "f"));
+    public void testeVelhoFemininoPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(56.32, 1.60, 70, "feminino"));
     }
 
-    // Peso normal1: 22 <= IMC <= 27 | (56.4, 1.60, 70, "f") = 22
+    // Peso normal2: 22 <= IMC <= 27 | (69.12, 1.60, 70, "feminino") = 27
     @Test
-    public void testeCalcularImcVelhoFemininoPesoNormal1() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(56.4, 1.60, 70, "f"));
+    public void testeVelhoFemininoPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(69.12, 1.60, 70, "feminino"));
     }
 
-    // Peso normal2: 22 <= IMC <= 27 | (69.12, 1.60, 70, "f") = 27
+    // Sobrepeso1: 27 < IMC <= 32 | (69.376, 1.60, 70, "feminino") = 27.1
     @Test
-    public void testeCalcularImcVelhoFemininoPesoNormal2() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(69.12, 1.60, 70, "f"));
+    public void testeVelhoFemininoSobrepeso1() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(69.4, 1.60, 70, "feminino"));
     }
 
-    // Sobrepeso1: 27 < IMC <= 32 | (69.4, 1.60, 70, "f") = 27.1
+    // Sobrepeso2: 27 < IMC <= 32 | (81.92, 1.60, 70, "feminino") = 32
     @Test
-    public void testeCalcularImcVelhoFemininoSobrepeso1() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(69.4, 1.60, 70, "f"));
+    public void testeVelhoFemininoSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(81.92, 1.60, 70, "feminino"));
     }
 
-    // Sobrepeso2: 27 < IMC <= 32 | (81.92, 1.60, 70, "f") = 32
+    // Obesidade grau I1: 32 < IMC <= 37 | (82.176, 1.60, 70, "feminino") = 32.1
     @Test
-    public void testeCalcularImcVelhoFemininoSobrepeso2() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(81.92, 1.60, 70, "f"));
+    public void testeVelhoFemininoObesidadeGrauI1() {
+        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(82.176, 1.60, 70, "feminino"));
     }
 
-    // Obesidade grau I1: 32 < IMC <= 37 | (83, 1.60, 70, "f") = 32.1
+    // Obesidade grau I2: 32 < IMC <= 37 | (94.72, 1.60, 70, "feminino") = 37
     @Test
-    public void testeCalcularImcVelhoFemininoObesidadeGrauI1() {
-        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(83, 1.60, 70, "f"));
+    public void testeVelhoFemininoObesidadeGrauILimiteSuperior() {
+        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(94.72, 1.60, 70, "feminino"));
+    }
+    // Obesidade grau II1: 37 < IMC <= 41.9 | (94.976, 1.60, 70, "feminino") = 37.1
+    @Test
+    public void testeVelhoFemininoObesidadeGrauII1() {
+        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(94.976, 1.60, 70, "feminino"));
     }
 
-    // Obesidade grau I2: 32 < IMC <= 37 | (94.72, 1.60, 70, "f") = 37
+    // Obesidade grau II2: 37 < IMC <= 41.9 | (107.264, 1.60, 70, "feminino") = 41.9
     @Test
-    public void testeCalcularImcVelhoFemininoObesidadeGrauI2() {
-        Assert.assertEquals("Obesidade grau I", calcIMC.calcularImc(94.72, 1.60, 70, "f"));
-    }
-    // Obesidade grau II1: 37 < IMC <= 41.9 | (95, 1.60, 70, "f") = 37.1
-    @Test
-    public void testeCalcularImcVelhoFemininoObesidadeGrauII1() {
-        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(95, 1.60, 70, "f"));
+    public void testeVelhoFemininoObesidadeGrauIILimiteSuperior() {
+        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(107.264, 1.60, 70, "feminino"));
     }
 
-    // Obesidade grau II2: 37 < IMC <= 41.9 | (107.264, 1.60, 70, "f") = 41.9
+    // Obesidade grau III (obesidade mórbida): IMC >= 42 | (107.52, 1.60, 70, "feminino") = 42
     @Test
-    public void testeCalcularImcVelhoFemininoObesidadeGrauII2() {
-        Assert.assertEquals("Obesidade grau II", calcIMC.calcularImc(107.264, 1.60, 70, "f"));
-    }
-
-    // Obesidade grau III (obesidade mórbida): IMC >= 42 | (107.6, 1.60, 70, "f") = 42
-    @Test
-    public void testeCalcularImcVelhoFemininoObesidadeGrauIII() {
-        Assert.assertEquals("Obesidade grau III (obesidade mórbida)", calcIMC.calcularImc(108, 1.60, 70, "f"));
+    public void testeVelhoFemininoObesidadeGrauIII() {
+        Assert.assertEquals("Obesidade grau III (obesidade mórbida)", calcIMC.calcularImc(107.52, 1.60, 70, "feminino"));
     }
 
     // CRIANÇAS TESTES (60 no total {5 idades [2,4,6,8,10], 6 classificações e 2 sexos})
@@ -248,387 +242,387 @@ public class CalculadoraIMCTeste {
 
     // 2 ANOS
 
-    // Baixo peso: IMC < 14.8 | (11, 0.90, 2, "m") = 13.5
+    // Baixo peso: IMC < 14.8 | (10.935, 0.90, 2, "masculino") = 13.5
     @Test
-    public void testeCalcularImcCriancaMasculino2AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(11, 0.90, 2, "m"));
+    public void testeCriancaMasculino2AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(10.935, 0.90, 2, "masculino"));
     }
 
-    // Peso normal inferior: 14.8 <= IMC < 18.5 | (11.988, 0.90, 2, "m") = 14.8
+    // Peso normal inferior: 14.8 <= IMC < 18.5 | (11.988, 0.90, 2, "masculino") = 14.8
     @Test
-    public void testeCalcularImcCriancaMasculino2AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(11.988, 0.90, 2, "m"));
+    public void testeCriancaMasculino2AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(11.988, 0.90, 2, "masculino"));
     }
 
-    // Peso normal superior: 14.8 <= IMC < 18.5 | (14.9, 0.90, 2, "m") = 18.4
+    // Peso normal superior: 14.8 <= IMC < 18.5 | (14.9, 0.90, 2, "masculino") = 18.4
     @Test
-    public void testeCalcularImcCriancaMasculino2AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(14.9, 0.90, 2, "m"));
+    public void testeCriancaMasculino2AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(14.904, 0.90, 2, "masculino"));
     }
 
-    // Sobrepeso inferior: 18.5 <= IMC <= 19.2 | (14.985, 0.90, 2, "m") = 18.5
+    // Sobrepeso inferior: 18.5 <= IMC <= 19.2 | (14.985, 0.90, 2, "masculino") = 18.5
     @Test
-    public void testeCalcularImcCriancaMasculino2AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(14.985, 0.90, 2, "m"));
+    public void testeCriancaMasculino2AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(14.985, 0.90, 2, "masculino"));
     }
 
-    // Sobrepeso superior: 18.5 <= IMC <= 19.2 | (15.552, 0.90, 2, "m") = 19.2
+    // Sobrepeso superior: 18.5 <= IMC <= 19.2 | (15.552, 0.90, 2, "masculino") = 19.2
     @Test
-    public void testeCalcularImcCriancaMasculino2AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(15.552, 0.90, 2, "m")); // IMC = 19.2
+    public void testeCriancaMasculino2AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(15.552, 0.90, 2, "masculino")); // IMC = 19.2
     }
 
-    // Obesidade: IMC > 19.2 | (16, 0.90, 2, "m") = 19.75
+    // Obesidade: IMC > 19.2 | (15.663, 0.90, 2, "masculino") = 19.3
     @Test
-    public void testeCalcularImcCriancaMasculino2AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(16, 0.90, 2, "m")); // IMC = 19.75
+    public void testeCriancaMasculino2AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(15.633, 0.90, 2, "masculino")); // IMC = 19.75
     }
 
     // 4 ANOS
 
-    // Baixo peso: IMC < 14 | (14, 1.05, 4, "m") = 12.7
+    // Baixo peso: IMC < 14 | (15.32475, 1.05, 4, "masculino") = 13.9
     @Test
-    public void testeCalcularImcCriancaMasculino4AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(14, 1.05, 4, "m"));
+    public void testeCriancaMasculino4AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(15.32475, 1.05, 4, "masculino"));
     }
 
-    // Peso normal inferior: 14 <= IMC < 17.4 | (15.435, 1.05, 4, "m") = 14
+    // Peso normal inferior: 14 <= IMC < 17.4 | (15.435, 1.05, 4, "masculino") = 14
     @Test
-    public void testeCalcularImcCriancaMasculino4AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(15.435, 1.05, 4, "m"));
+    public void testeCriancaMasculino4AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(15.435, 1.05, 4, "masculino"));
     }
 
-    // Peso normal superior: 14 <= IMC < 17.4 | (19.1, 1.05, 4, "m") = 17.39
+    // Peso normal superior: 14 <= IMC < 17.4 | (19.07325, 1.05, 4, "masculino") = 17.3
     @Test
-    public void testeCalcularImcCriancaMasculino4AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(19.1, 1.05, 4, "m"));
+    public void testeCriancaMasculino4AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(19.07325, 1.05, 4, "masculino"));
     }
 
-    // Sobrepeso inferior: 17.4 <= IMC <= 18 | (19.18350, 1.05, 4, "m") = 17.4
+    // Sobrepeso inferior: 17.4 <= IMC <= 18 | (19.18350, 1.05, 4, "masculino") = 17.4
     @Test
-    public void testeCalcularImcCriancaMasculino4AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(19.18350, 1.05, 4, "m"));
+    public void testeCriancaMasculino4AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(19.18350, 1.05, 4, "masculino"));
     }
 
-    // Sobrepeso superior: 17.4 <= IMC <= 18 | (19.845, 1.05, 4, "m") = 18
+    // Sobrepeso superior: 17.4 <= IMC <= 18 | (19.845, 1.05, 4, "masculino") = 18
     @Test
-    public void testeCalcularImcCriancaMasculino4AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(19.845, 1.05, 4, "m"));
+    public void testeCriancaMasculino4AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(19.845, 1.05, 4, "masculino"));
     }
 
-    // Obesidade: IMC > 18 | (20, 1.05, 4, "m") = 18.14
+    // Obesidade: IMC > 18 | (19.95525, 1.05, 4, "masculino") = 18.1
     @Test
-    public void testeCalcularImcCriancaMasculino4AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(20, 1.05, 4, "m"));
+    public void testeCriancaMasculino4AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(19.95525, 1.05, 4, "masculino"));
     }
 
     // 6 ANOS
 
-    // Baixo peso: IMC < 13.8 | (16.01, 1.11, 6, "m") = 13
+    // Baixo peso: IMC < 13.8 | (16.87977, 1.11, 6, "masculino") = 13.7
     @Test
-    public void testeCalcularImcCriancaMasculino6AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(16.01, 1.11, 6, "m"));
+    public void testeCriancaMasculino6AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(16.87977, 1.11, 6, "masculino"));
     }
 
-    // Peso normal inferior: 13.8 <= IMC < 17.5 | (17.00298, 1.11, 6, "m") = 13.8
+    // Peso normal inferior: 13.8 <= IMC < 17.5 | (17.00298, 1.11, 6, "masculino") = 13.8
     @Test
-    public void testeCalcularImcCriancaMasculino6AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(17.00298, 1.11, 6, "m"));
+    public void testeCriancaMasculino6AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(17.00298, 1.11, 6, "masculino"));
     }
 
-    // Peso normal superior: 13.8 <= IMC < 17.5 | (21.48, 1.11, 6, "m") = 17.49
+    // Peso normal superior: 13.8 <= IMC < 17.5 | (21.43854, 1.11, 6, "masculino") = 17.4
     @Test
-    public void testeCalcularImcCriancaMasculino6AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(21.48, 1.11, 6, "m"));
+    public void testeCriancaMasculino6AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(21.43854, 1.11, 6, "masculino"));
     }
 
-    // Sobrepeso inferior: 17.5 <= IMC <= 18.4 | (21.56175, 1.11, 6, "m") = 17.5
+    // Sobrepeso inferior: 17.5 <= IMC <= 18.4 | (21.56175, 1.11, 6, "masculino") = 17.5
     @Test
-    public void testeCalcularImcCriancaMasculino6AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(21.56175, 1.11, 6, "m"));
+    public void testeCriancaMasculino6AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(21.56175, 1.11, 6, "masculino"));
     }
 
-    // Sobrepeso superior: 17.5 <= IMC <= 18.4 | (22.64, 1.11, 6, "m") = 18.4
+    // Sobrepeso superior: 17.5 <= IMC <= 18.4 | (22.64, 1.11, 6, "masculino") = 18.4
     @Test
-    public void testeCalcularImcCriancaMasculino6AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(22.64, 1.11, 6, "m"));
+    public void testeCriancaMasculino6AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(22.64, 1.11, 6, "masculino"));
     }
 
-    // Obesidade: IMC > 18.4 | (23, 1.11, 6, "m") = 18.6
+    // Obesidade: IMC > 18.4 | (23, 1.11, 6, "masculino") = 18.6
     @Test
-    public void testeCalcularImcCriancaMasculino6AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(23, 1.11, 6, "m"));
+    public void testeCriancaMasculino6AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(23, 1.11, 6, "masculino"));
     }
 
     // CRIANÇA MASCULINO
 
 // 8 ANOS
 
-    // Baixo peso: IMC < 13.8 | (20.5, 1.22, 8, "m") = 13.75
+    // Baixo peso: IMC < 13.8 | (20.39108, 1.22, 8, "masculino") = 13.7
     @Test
-    public void testeCalcularImcCriancaMasculino8AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(20.5, 1.22, 8, "m"));
+    public void testeCriancaMasculino8AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(20.39108, 1.22, 8, "masculino"));
     }
 
-    // Peso normal inferior: 13.8 <= IMC < 18.6 | (20.57, 1.22, 8, "m") = 13.8
+    // Peso normal inferior: 13.8 <= IMC < 18.6 | (20.57, 1.22, 8, "masculino") = 13.8
     @Test
-    public void testeCalcularImcCriancaMasculino8AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(20.57, 1.22, 8, "m"));
+    public void testeCriancaMasculino8AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(20.57, 1.22, 8, "masculino"));
     }
 
-    // Peso normal superior: 13.8 <= IMC < 18.6 | (27.66936, 1.22, 8, "m") = 18.59
+    // Peso normal superior: 13.8 <= IMC < 18.6 | (27.5354, 1.22, 8, "masculino") = 18.5
     @Test
-    public void testeCalcularImcCriancaMasculino8AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(27.66936, 1.22, 8, "m"));
+    public void testeCriancaMasculino8AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(27.5354, 1.22, 8, "masculino"));
     }
 
-    // Sobrepeso inferior: 18.6 <= IMC <= 20.0 | (27.77, 1.22, 8, "m") = 18.6
+    // Sobrepeso inferior: 18.6 <= IMC <= 20.0 | (27.77, 1.22, 8, "masculino") = 18.6
     @Test
-    public void testeCalcularImcCriancaMasculino8AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(27.77, 1.22, 8, "m"));
+    public void testeCriancaMasculino8AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(27.77, 1.22, 8, "masculino"));
     }
 
-    // Sobrepeso superior: 18.6 <= IMC <= 20.0 | (29.76, 1.22, 8, "m") = 20.0
+    // Sobrepeso superior: 18.6 <= IMC <= 20.0 | (29.76, 1.22, 8, "masculino") = 20.0
     @Test
-    public void testeCalcularImcCriancaMasculino8AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(29.76, 1.22, 8, "m"));
+    public void testeCriancaMasculino8AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(29.76, 1.22, 8, "masculino"));
     }
 
-    // Obesidade: IMC > 20.0 | (30, 1.22, 8, "m") = 20.13
+    // Obesidade: IMC > 20.0 | (30, 1.22, 8, "masculino") = 20.1
     @Test
-    public void testeCalcularImcCriancaMasculino8AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(30, 1.22, 8, "m"));
+    public void testeCriancaMasculino8AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(30, 1.22, 8, "masculino"));
     }
 
 // 10 ANOS
 
-    // Baixo peso: IMC < 14.2 | (28, 1.41, 10, "m") = 14.1
+    // Baixo peso: IMC < 14.2 | (28, 1.41, 10, "masculino") = 14.1
     @Test
-    public void testeCalcularImcCriancaMasculino10AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(28, 1.41, 10, "m"));
+    public void testeCriancaMasculino10AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(28, 1.41, 10, "masculino"));
     }
 
-    // Peso normal inferior: 14.2 <= IMC < 20.3 | (28.23102, 1.41, 10, "m") = 14.2
+    // Peso normal inferior: 14.2 <= IMC < 20.3 | (28.23102, 1.41, 10, "masculino") = 14.2
     @Test
-    public void testeCalcularImcCriancaMasculino10AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(28.23102, 1.41, 10, "m"));
+    public void testeCriancaMasculino10AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(28.23102, 1.41, 10, "masculino"));
     }
 
-    // Peso normal superior: 14.2 <= IMC < 20.3 | (40.2, 1.41, 10, "m") = 20.29
+    // Peso normal superior: 14.2 <= IMC < 20.3 | (40.2, 1.41, 10, "masculino") = 20.29
     @Test
-    public void testeCalcularImcCriancaMasculino10AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(40.2, 1.41, 10, "m"));
+    public void testeCriancaMasculino10AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(40.2, 1.41, 10, "masculino"));
     }
 
-    // Sobrepeso inferior: 20.3 <= IMC <= 22 | (40.3584300, 1.41, 10, "m") = 20.3
+    // Sobrepeso inferior: 20.3 <= IMC <= 22 | (40.3584300, 1.41, 10, "masculino") = 20.3
     @Test
-    public void testeCalcularImcCriancaMasculino10AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(40.3584300, 1.41, 10, "m"));
+    public void testeCriancaMasculino10AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(40.3584300, 1.41, 10, "masculino"));
     }
 
-    // Sobrepeso superior: 20.3 <= IMC <= 22 | (43.7, 1.41, 10, "m") = 22.0
+    // Sobrepeso superior: 20.3 <= IMC <= 22 | (43.7, 1.41, 10, "masculino") = 22.0
     @Test
-    public void testeCalcularImcCriancaMasculino10AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(43.7, 1.41, 10, "m"));
+    public void testeCriancaMasculino10AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(43.7, 1.41, 10, "masculino"));
     }
 
-    // Obesidade: IMC > 22 | (45, 1.41, 10, "m") = 22.61
+    // Obesidade: IMC > 22 | (43.93701, 1.41, 10, "masculino") = 22.1
     @Test
-    public void testeCalcularImcCriancaMasculino10AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(45, 1.41, 10, "m"));
+    public void testeCriancaMasculino10AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(43.93701, 1.41, 10, "masculino"));
     }
 
     // CRIANÇA FEMININO
 
 // 2 ANOS
 
-    // Baixo peso: IMC < 14.4 | (11.66, 0.90, 2, "f") = 14.39
+    // Baixo peso: IMC < 14.4 | (11.66, 0.90, 2, "feminino") = 14.39
     @Test
-    public void testeCalcularImcCriancaFeminino2AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(11.66, 0.90, 2, "f"));
+    public void testeCriancaFeminino2AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(11.66, 0.90, 2, "feminino"));
     }
 
-    // Peso normal inferior: 14.4 <= IMC < 18 | (11.664, 0.90, 2, "f") = 14.4
+    // Peso normal inferior: 14.4 <= IMC < 18 | (11.664, 0.90, 2, "feminino") = 14.4
     @Test
-    public void testeCalcularImcCriancaFeminino2AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(11.664, 0.90, 2, "f"));
+    public void testeCriancaFeminino2AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(11.664, 0.90, 2, "feminino"));
     }
 
-    // Peso normal superior: 14.4 <= IMC < 18 | (14.5, 0.90, 2, "f") = 17.99
+    // Peso normal superior: 14.4 <= IMC < 18 | (14.5, 0.90, 2, "feminino") = 17.99
     @Test
-    public void testeCalcularImcCriancaFeminino2AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(14.5, 0.90, 2, "f"));
+    public void testeCriancaFeminino2AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(14.5, 0.90, 2, "feminino"));
     }
 
-    // Sobrepeso inferior: 18 <= IMC <= 19.1 | (14.58, 0.90, 2, "f") = 18
+    // Sobrepeso inferior: 18 <= IMC <= 19.1 | (14.58, 0.90, 2, "feminino") = 18
     @Test
-    public void testeCalcularImcCriancaFeminino2AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(14.58, 0.90, 2, "f"));
+    public void testeCriancaFeminino2AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(14.58, 0.90, 2, "feminino"));
     }
 
-    // Sobrepeso superior: 18 <= IMC <= 19.1 | (15.471, 0.90, 2, "f") = 19.1
+    // Sobrepeso superior: 18 <= IMC <= 19.1 | (15.471, 0.90, 2, "feminino") = 19.1
     @Test
-    public void testeCalcularImcCriancaFeminino2AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(15.471, 0.90, 2, "f"));
+    public void testeCriancaFeminino2AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(15.471, 0.90, 2, "feminino"));
     }
 
-    // Obesidade: IMC > 19.1 | (16, 0.90, 2, "f") = 19.75
+    // Obesidade: IMC > 19.1 | (15.552, 0.90, 2, "feminino") = 19.2
     @Test
-    public void testeCalcularImcCriancaFeminino2AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(16, 0.90, 2, "f"));
+    public void testeCriancaFeminino2AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(15.552, 0.90, 2, "feminino"));
     }
 
 // 4 ANOS
 
-    // Baixo peso: IMC < 13.8 | (14, 1.05, 4, "f") = 12.7
+    // Baixo peso: IMC < 13.8 | (11.097, 1.05, 4, "feminino") = 13.7
     @Test
-    public void testeCalcularImcCriancaFeminino4AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(14, 1.05, 4, "f"));
+    public void testeCriancaFeminino4AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(11.097, 1.05, 4, "feminino"));
     }
 
-    // Peso normal inferior: 13.8 <= IMC < 16.8 | (15.435, 1.05, 4, "f") = 13.8
+    // Peso normal inferior: 13.8 <= IMC < 16.8 | (15.435, 1.05, 4, "feminino") = 13.8
     @Test
-    public void testeCalcularImcCriancaFeminino4AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(15.435, 1.05, 4, "f"));
+    public void testeCriancaFeminino4AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(15.435, 1.05, 4, "feminino"));
     }
 
-    // Peso normal superior: 13.8 <= IMC < 16.8 | (18.51, 1.05, 4, "f") = 16.79
+    // Peso normal superior: 13.8 <= IMC < 16.8 | (18.51, 1.05, 4, "feminino") = 16.79
     @Test
-    public void testeCalcularImcCriancaFeminino4AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(18.51, 1.05, 4, "f"));
+    public void testeCriancaFeminino4AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(18.51, 1.05, 4, "feminino"));
     }
 
-    // Sobrepeso inferior: 16.8 <= IMC <= 18 | (18.522, 1.05, 4, "f") = 16.8
+    // Sobrepeso inferior: 16.8 <= IMC <= 18 | (18.522, 1.05, 4, "feminino") = 16.8
     @Test
-    public void testeCalcularImcCriancaFeminino4AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(18.522, 1.05, 4, "f"));
+    public void testeCriancaFeminino4AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(18.522, 1.05, 4, "feminino"));
     }
 
-    // Sobrepeso superior: 16.8 <= IMC <= 18 | (19.845, 1.05, 4, "f") = 18
+    // Sobrepeso superior: 16.8 <= IMC <= 18 | (19.845, 1.05, 4, "feminino") = 18
     @Test
-    public void testeCalcularImcCriancaFeminino4AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(19.845, 1.05, 4, "f"));
+    public void testeCriancaFeminino4AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(19.845, 1.05, 4, "feminino"));
     }
 
-    // Obesidade: IMC > 18 | (20, 1.05, 4, "f") = 18.14
+    // Obesidade: IMC > 18 | (20, 1.05, 4, "feminino") = 18.1
     @Test
-    public void testeCalcularImcCriancaFeminino4AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(20, 1.05, 4, "f"));
+    public void testeCriancaFeminino4AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(20, 1.05, 4, "feminino"));
     }
 
     // CRIANÇA FEMININO
 
 // 6 ANOS
 
-    // Baixo peso: IMC < 13.5 | (17.8405250, 1.15, 6, "f") = 13.49
+    // Baixo peso: IMC < 13.5 | (17.8405250, 1.15, 6, "feminino") = 13.49
     @Test
-    public void testeCalcularImcCriancaFeminino6AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(17.8405250, 1.15, 6, "f"));
+    public void testeCriancaFeminino6AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(17.8405250, 1.15, 6, "feminino"));
     }
 
-    // Peso normal inferior: 13.5 <= IMC < 17.1 | (18.053, 1.15, 6, "f") = 13.5
+    // Peso normal inferior: 13.5 <= IMC < 17.1 | (18.053, 1.15, 6, "feminino") = 13.5
     @Test
-    public void testeCalcularImcCriancaFeminino6AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(18.053, 1.15, 6, "f"));
+    public void testeCriancaFeminino6AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(18.053, 1.15, 6, "feminino"));
     }
 
-    // Peso normal superior: 13.5 <= IMC < 17.1 | (22.46, 1.15, 6, "f") = 17.09
+    // Peso normal superior: 13.5 <= IMC < 17.1 | (22.46, 1.15, 6, "feminino") = 17.09
     @Test
-    public void testeCalcularImcCriancaFeminino6AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(22.46, 1.15, 6, "f"));
+    public void testeCriancaFeminino6AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(22.46, 1.15, 6, "feminino"));
     }
 
-    // Sobrepeso inferior: 17.1 <= IMC <= 18.8 | (22.61475, 1.15, 6, "f") = 17.1
+    // Sobrepeso inferior: 17.1 <= IMC <= 18.8 | (22.61475, 1.15, 6, "feminino") = 17.1
     @Test
-    public void testeCalcularImcCriancaFeminino6AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(22.61475, 1.15, 6, "f"));
+    public void testeCriancaFeminino6AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(22.61475, 1.15, 6, "feminino"));
     }
 
-    // Sobrepeso superior: 17.1 <= IMC <= 18.8 | (24.85, 1.15, 6, "f") = 18.8
+    // Sobrepeso superior: 17.1 <= IMC <= 18.8 | (24.85, 1.15, 6, "feminino") = 18.8
     @Test
-    public void testeCalcularImcCriancaFeminino6AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(24.85, 1.15, 6, "f"));
+    public void testeCriancaFeminino6AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(24.85, 1.15, 6, "feminino"));
     }
 
-    // Obesidade: IMC > 18.8 | (25, 1.15, 6, "f") = 18.9
+    // Obesidade: IMC > 18.8 | (25, 1.15, 6, "feminino") = 18.9
     @Test
-    public void testeCalcularImcCriancaFeminino6AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(25, 1.15, 6, "f"));
+    public void testeCriancaFeminino6AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(25, 1.15, 6, "feminino"));
     }
 
 // 8 ANOS
 
-    // Baixo peso: IMC < 13.6 | (20.1, 1.22, 8, "f") = 13.59
+    // Baixo peso: IMC < 13.6 | (20.1, 1.22, 8, "feminino") = 13.59
     @Test
-    public void testeCalcularImcCriancaFeminino8AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(20.1, 1.22, 8, "f"));
+    public void testeCriancaFeminino8AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(20.1, 1.22, 8, "feminino"));
     }
 
-    // Peso normal inferior: 13.6 <= IMC < 18.2 | (20.24224, 1.22, 8, "f") = 13.6
+    // Peso normal inferior: 13.6 <= IMC < 18.2 | (20.24224, 1.22, 8, "feminino") = 13.6
     @Test
-    public void testeCalcularImcCriancaFeminino8AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(20.24224, 1.22, 8, "f"));
+    public void testeCriancaFeminino8AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(20.24224, 1.22, 8, "feminino"));
     }
 
-    // Peso normal superior: 13.6 <= IMC < 18.2 | (27.03, 1.22, 8, "f") = 18.19
+    // Peso normal superior: 13.6 <= IMC < 18.2 | (27.03, 1.22, 8, "feminino") = 18.19
     @Test
-    public void testeCalcularImcCriancaFeminino8AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(27.03, 1.22, 8, "f"));
+    public void testeCriancaFeminino8AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(27.03, 1.22, 8, "feminino"));
     }
 
-    // Sobrepeso inferior: 18.2 <= IMC <= 20.6 | (27.1, 1.22, 8, "f") = 18.2
+    // Sobrepeso inferior: 18.2 <= IMC <= 20.6 | (27.1, 1.22, 8, "feminino") = 18.2
     @Test
-    public void testeCalcularImcCriancaFeminino8AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(27.1, 1.22, 8, "f"));
+    public void testeCriancaFeminino8AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(27.1, 1.22, 8, "feminino"));
     }
 
-    // Sobrepeso superior: 18.2 <= IMC <= 20.6 | (30.63, 1.22, 8, "f") = 20.6
+    // Sobrepeso superior: 18.2 <= IMC <= 20.6 | (30.63, 1.22, 8, "feminino") = 20.6
     @Test
-    public void testeCalcularImcCriancaFeminino8AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(30.63, 1.22, 8, "f"));
+    public void testeCriancaFeminino8AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(30.63, 1.22, 8, "feminino"));
     }
 
-    // Obesidade: IMC > 20.6 | (31, 1.22, 8, "f") = 20.84
+    // Obesidade: IMC > 20.6 | (30.80988, 1.22, 8, "feminino") = 20.7
     @Test
-    public void testeCalcularImcCriancaFeminino8AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(31, 1.22, 8, "f"));
+    public void testeCriancaFeminino8AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(30.80988, 1.22, 8, "feminino"));
     }
 
 // 10 ANOS
 
-    // Baixo peso: IMC < 14 | (27, 1.41, 10, "f") = 13.99
+    // Baixo peso: IMC < 14 | (27, 1.41, 10, "feminino") = 13.99
     @Test
-    public void testeCalcularImcCriancaFeminino10AnosBaixoPesoLimiteInferior() {
-        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(27, 1.41, 10, "f"));
+    public void testeCriancaFeminino10AnosBaixoPesoLimiteInferior() {
+        Assert.assertEquals("Baixo peso", calcIMC.calcularImc(27, 1.41, 10, "feminino"));
     }
 
-    // Peso normal inferior: 14 <= IMC < 20 | (28.12, 1.41, 10, "f") = 14
+    // Peso normal inferior: 14 <= IMC < 20 | (28.12, 1.41, 10, "feminino") = 14
     @Test
-    public void testeCalcularImcCriancaFeminino10AnosPesoNormalLimiteInferior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(28.12, 1.41, 10, "f"));
+    public void testeCriancaFeminino10AnosPesoNormalLimiteInferior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(28.12, 1.41, 10, "feminino"));
     }
 
-    // Peso normal superior: 14 <= IMC < 20 | (39.7, 1.41, 10, "f") = 19.99
+    // Peso normal superior: 14 <= IMC < 20 | (39.7, 1.41, 10, "feminino") = 19.99
     @Test
-    public void testeCalcularImcCriancaFeminino10AnosPesoNormalLimiteSuperior() {
-        Assert.assertEquals("Peso normal", calcIMC.calcularImc(39.7, 1.41, 10, "f"));
+    public void testeCriancaFeminino10AnosPesoNormalLimiteSuperior() {
+        Assert.assertEquals("Peso normal", calcIMC.calcularImc(39.7, 1.41, 10, "feminino"));
     }
 
-    // Sobrepeso inferior: 20 <= IMC <= 23 | (40.02, 1.41, 10, "f") = 20
+    // Sobrepeso inferior: 20 <= IMC <= 23 | (40.02, 1.41, 10, "feminino") = 20
     @Test
-    public void testeCalcularImcCriancaFeminino10AnosSobrepesoLimiteInferior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(40.02, 1.41, 10, "f"));
+    public void testeCriancaFeminino10AnosSobrepesoLimiteInferior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(40.02, 1.41, 10, "feminino"));
     }
 
-    // Sobrepeso superior: 20 <= IMC <= 23 | (45.7263, 1.41, 10, "f") = 23
+    // Sobrepeso superior: 20 <= IMC <= 23 | (45.7263, 1.41, 10, "feminino") = 23
     @Test
-    public void testeCalcularImcCriancaFeminino10AnosSobrepesoLimiteSuperior() {
-        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(45.7263, 1.41, 10, "f"));
+    public void testeCriancaFeminino10AnosSobrepesoLimiteSuperior() {
+        Assert.assertEquals("Sobrepeso", calcIMC.calcularImc(45.7263, 1.41, 10, "feminino"));
     }
 
-    // Obesidade: IMC > 23 | (46.5, 1.41, 10, "f") = 23.43
+    // Obesidade: IMC > 23 | (45.92511, 1.41, 10, "feminino") = 23.1
     @Test
-    public void testeCalcularImcCriancaFeminino10AnosObesidade() {
-        Assert.assertEquals("Obesidade", calcIMC.calcularImc(46.5, 1.41, 10, "f"));
+    public void testeCriancaFeminino10AnosObesidade() {
+        Assert.assertEquals("Obesidade", calcIMC.calcularImc(45.92511, 1.41, 10, "feminino"));
     }
 }

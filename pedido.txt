@@ -1,6 +1,6 @@
 [] deixar todos os textos em minuscúlo
-[] separar cada faixa de idade em masculino (m) e feminino (f)
-[] deixar o string de masculino e feminino em minusculo (m) e (f)
+[] separar cada faixa de idade em masculino (masculino) e feminino (feminino)
+[] deixar o string de masculino e feminino em minusculo (masculino) e (feminino)
 [] verificar a quantidade total de teste para cada situacao
 [] colocar os testes com a maior quantidade de casas decimais possiveis.
 e um teste para o limite de cada faixa, ou seja "Baixo peso grave: entre 16 e 16,99" tem que ter um teste para 16 e um para 16,99

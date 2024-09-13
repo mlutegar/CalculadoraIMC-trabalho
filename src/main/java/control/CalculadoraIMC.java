@@ -7,16 +7,16 @@ public class CalculadoraIMC {
     public String calcularImc(double peso, double altura, int idade, String sexo) {
         // verificação de idade
         if (idade <= 20) {
-            return calcularImcCrianca(idade, sexo, Imc(peso, altura));
+            return calcularImcCrianca(idade, sexo, imc(peso, altura));
         } else if (idade < 65) {
-            return calcularImcAdulto(Imc(peso, altura));
+            return calcularImcAdulto(imc(peso, altura));
         } else {
-            return calcularImcVelho(sexo, Imc(peso, altura));
+            return calcularImcVelho(sexo, imc(peso, altura));
         }
     }
 
     // Imc: método que calcula o IMC de uma pessoa e retorna o valor arredondado em 5 casas decimais
-    private static double Imc(double peso, double altura) {
+    private static double imc(double peso, double altura) {
         double imc = peso / (altura * altura);
         return Math.round(imc * 100000.0) / 100000.0;
     }
@@ -45,7 +45,7 @@ public class CalculadoraIMC {
 
     // VELHOS MÉTODOS (20 no total)
     public String calcularImcVelho(String sexo, double imc) {
-        if (Objects.equals(sexo, "m")) {
+        if (Objects.equals(sexo, "masculino")) {
             // Classificação para homens acima de 65 anos
             if (imc < 22) {
                 return "Baixo peso";
@@ -60,9 +60,9 @@ public class CalculadoraIMC {
             } else {
                 return "Obesidade grau III (obesidade mórbida)";
             }
-        } else if (Objects.equals(sexo, "f")) {
+        } else if (Objects.equals(sexo, "feminino")) {
             // Classificação para mulheres acima de 65 anos
-            if (imc < 21.9) {
+            if (imc < 22) {
                 return "Baixo peso";
             } else if (imc >= 22 && imc <= 27) {
                 return "Peso normal";
@@ -82,9 +82,9 @@ public class CalculadoraIMC {
 
     // CRIANÇAS MÉTODOS (60 no total {5 idades [2,4,6,8,10], 6 classificações e 2 sexos})
     public String calcularImcCrianca(int idade, String sexo, double imc) {
-        if (Objects.equals(sexo, "m")) {
+        if (Objects.equals(sexo, "masculino")) {
             return calcularImcCriancaMasculino(idade, imc);
-        } else if (Objects.equals(sexo, "f")) {
+        } else if (Objects.equals(sexo, "feminino")) {
             return calcularImcCriancaFeminino(idade, imc);
         } else {
             return "Sexo informado inválido.";
